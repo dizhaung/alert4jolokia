@@ -22,6 +22,27 @@ Currently it has been tested on Wildfly 8.x/9.x/10.x
 
 Examples
 -------------------
+Alerts defined so far:
+
+Heap Memory in use:
+
+_java.lang:type=Memory --> HeapMemoryUsage;_
+
+JBoss/Wildfly datasource number of connections in use:
+
+_jboss.as:data-source={0},statistics=pool,subsystem=datasources --> InUseCount_
+
+Apache TomEE datasource number of connections in use
+
+_openejb.management:ObjectType=datasources,DataSource={0} --> NumActive_
+
+ActiveMQ broker messages sent to the destination  
+
+_org.apache.activemq:type=Broker,brokerName={0},destinationType={1},destinationName={2} --> EnqueueCount_
+
+ActiveMQ broker memory in use percentage
+
+_org.apache.activemq:type=Broker,brokerName={0} --> MemoryPercentUsage_
 
 
 Third-Party Libraries
