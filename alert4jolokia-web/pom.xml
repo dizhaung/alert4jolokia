@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <parent>
+      <artifactId>alert4jolokia</artifactId>
+      <groupId>org.hifly.alert4jolokia</groupId>
+      <version>0.1</version>
+   </parent>
+
+   <artifactId>alert4jolokia-web</artifactId>
+   <packaging>war</packaging>
+   <name>alert4jolokia: WAR Module</name>
+
+
+   <dependencies>
+
+       <dependency>
+           <groupId>org.hifly.alert4jolokia</groupId>
+           <artifactId>alert4jolokia-common</artifactId>
+           <scope>provided</scope>
+       </dependency>
+
+       <dependency>
+           <groupId>org.hifly.alert4jolokia</groupId>
+           <artifactId>alert4jolokia-scheduler</artifactId>
+           <type>ejb</type>
+           <scope>provided</scope>
+       </dependency>
+
+       <dependency>
+           <groupId>org.jboss.resteasy</groupId>
+           <artifactId>resteasy-jaxrs</artifactId>
+       </dependency>
+
+       <dependency>
+           <groupId>org.jboss.resteasy</groupId>
+           <artifactId>resteasy-multipart-provider</artifactId>
+       </dependency>
+
+       <dependency>
+           <groupId>javax.servlet</groupId>
+           <artifactId>servlet-api</artifactId>
+       </dependency>
+
+      <dependency>
+         <groupId>javax.enterprise</groupId>
+         <artifactId>cdi-api</artifactId>
+          <scope>provided</scope>
+      </dependency>
+
+       <dependency>
+           <groupId>org.jboss.spec.javax.ejb</groupId>
+           <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+       </dependency>
+
+       <dependency>
+           <groupId>org.slf4j</groupId>
+           <artifactId>slf4j-api</artifactId>
+       </dependency>
+
+       <dependency>
+           <groupId>com.thetransactioncompany</groupId>
+           <artifactId>cors-filter</artifactId>
+       </dependency>
+
+       <dependency>
+           <groupId>org.json</groupId>
+           <artifactId>json</artifactId>
+       </dependency>
+
+   </dependencies>
+
+   <build>
+      <finalName>${project.artifactId}</finalName>
+      <plugins>
+         <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>${version.war.plugin}</version>
+            <configuration>
+               <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+
+</project>
